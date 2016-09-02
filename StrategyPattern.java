@@ -5,10 +5,12 @@
  */
 
 public class StrategyPattern {
-    MutableDuck md = new MutableDuck();
-    md.performFly();
-    md.setFlyBehavior(new FlyNoWay());
-    md.performFly();
+    public static void main(String[] args) {
+	MutableDuck md = new MutableDuck();
+	md.performFly();
+	md.setFlyBehavior(new FlyNoWay());
+	md.performFly();
+    }
 }
 
 abstract class Duck {
@@ -23,7 +25,7 @@ abstract class Duck {
     }
 }
 
-class MutableDuck {
+class MutableDuck extends Duck {
     public MutableDuck() {
 	flyBehavior = new FlyWithWings();
     }
